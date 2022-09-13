@@ -328,6 +328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8975cbedec4f72d49850c68c9fe58c37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _projectileParticles: {fileID: 0}
+  _projectileSound: {fileID: 0}
+  _damage: 1
 --- !u!1 &8790063986731972233
 GameObject:
   m_ObjectHideFlags: 0

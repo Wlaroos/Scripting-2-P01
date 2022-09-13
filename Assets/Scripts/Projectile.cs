@@ -7,13 +7,23 @@ public class Projectile : MonoBehaviour
 
     [SerializeField] ParticleSystem _projectileParticles;
     [SerializeField] AudioClip _projectileSound;
+    [SerializeField] int _damage;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.GetComponentInParent<Player>() == null)
         {
-            Feedback();
-            Destroy(this.gameObject);
+            if (collision.transform.GetComponentInParent<IDamageable>() != null)
+            {
+                collision.transform.GetComponentInParent<IDamageable>().TakeDamage(_damage);
+                Feedback();
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Feedback();
+                Destroy(this.gameObject);
+            }
         }
     }
 
