@@ -19,6 +19,8 @@ public class Shoot : MonoBehaviour
 
     private bool _cooling = false;
 
+    private bool _flipping = false;
+
     private void FixedUpdate()
     {
         //Debug.Log(_heatAmount);
@@ -44,7 +46,7 @@ public class Shoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButton("Fire1") && Time.time > _nextFire && _cooling == false)
+        if (Input.GetButton("Fire1") && Time.time > _nextFire && _cooling == false && _flipping == false)
         {
             _nextFire = Time.time + _fireRate;
 
@@ -69,5 +71,15 @@ public class Shoot : MonoBehaviour
         {
             AudioHelper.PlayClip2D(_shootSound, 1f);
         }
+    }
+
+    public void Flip()
+    {
+        _flipping = true;
+    }
+
+    public void FlipEnd()
+    {
+        _flipping = false;
     }
 }

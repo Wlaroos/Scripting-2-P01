@@ -6,6 +6,7 @@ public class AnimationHelperScript : MonoBehaviour
 {
     public void Flip()
     {
+        transform.GetChild(1).GetComponent<Shoot>().FlipEnd();
         Invoke(nameof(FlipEnd), 1f);
     }
 

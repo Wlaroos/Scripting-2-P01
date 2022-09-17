@@ -50,6 +50,7 @@ public class TankController : MonoBehaviour
         _rb.AddForce(75f * transform.forward, ForceMode.Impulse);
         flipped = true;
         transform.GetComponent<Player>().Flip();
+        transform.GetChild(0).GetChild(1).GetComponent<Shoot>().Flip();
         transform.GetChild(0).GetComponent<Animator>().SetTrigger("Flipped");
     }
 
