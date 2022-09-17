@@ -21,7 +21,7 @@ public class Shoot : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(_heatAmount);
+        //Debug.Log(_heatAmount);
 
         if(_heatAmount > 0 && _cooling == true)
         {

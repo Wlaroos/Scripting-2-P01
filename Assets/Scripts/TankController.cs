@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class TankController : MonoBehaviour
 {
-    [SerializeField] float _moveSpeed = .25f;
+    [SerializeField] float _moveSpeed = 10f;
     public float MoveSpeed
     {
         get => _moveSpeed;
         set => _moveSpeed = value;
     }
-    [SerializeField] float _turnSpeed = 2f;
+
+    bool flipped = false;
 
     Rigidbody _rb = null;
 
@@ -22,27 +23,39 @@ public class TankController : MonoBehaviour
     private void FixedUpdate()
     {
         MoveTank();
-        TurnTank();
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && flipped == false)
+        {
+            FlipTank();
+        }
     }
 
     public void MoveTank()
     {
-        // calculate the move amount
-        float moveAmountThisFrame = Input.GetAxis("Vertical") * _moveSpeed;
-        // create a vector from amount and direction
-        Vector3 moveOffset = transform.forward * moveAmountThisFrame;
-        // apply vector to the rigidbody
-        _rb.MovePosition(_rb.position + moveOffset);
-        // technically adjusting vector is more accurate! (but more complex)
+        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxis("Horizontal");
+
+        Vector3 newPosition = new Vector3(moveHorizontal, 0.0f, moveVertical);
+
+        transform.LookAt(newPosition + transform.position);
+
+        transform.Translate(newPosition * _moveSpeed * Time.deltaTime, Space.World);
     }
 
-    public void TurnTank()
+    public void FlipTank()
     {
-        // calculate the turn amount
-        float turnAmountThisFrame = Input.GetAxis("Horizontal") * _turnSpeed;
-        // create a Quaternion from amount and direction (x,y,z)
-        Quaternion turnOffset = Quaternion.Euler(0, turnAmountThisFrame, 0);
-        // apply quaternion to the rigidbody
-        _rb.MoveRotation(_rb.rotation * turnOffset);
+        _rb.AddForce(75f * transform.forward, ForceMode.Impulse);
+        flipped = true;
+        transform.GetComponent<Player>().Flip();
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("Flipped");
     }
+
+    public void FlipEnd()
+    {
+        flipped = false;
+    }
+
 }

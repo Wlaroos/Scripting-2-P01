@@ -20,8 +20,6 @@ public class Player : MonoBehaviour
 
     TankController _tankController;
 
-    GameObject[] tankObjects;
-
     private void Awake()
     {
         _tankController = GetComponent<TankController>();
@@ -30,15 +28,6 @@ public class Player : MonoBehaviour
     void Start()
     {
         _currentHealth = _maxHealth;
-
-        GameObject[] tankArt = new GameObject[transform.GetChild(0).childCount];
-
-        for (int i = 0; i < transform.GetChild(0).childCount; i++)
-        {
-            tankArt[i] = transform.GetChild(0).GetChild(i).gameObject;
-        }
-
-        tankObjects = tankArt;
     }
 
     public void IncreaseHealth(int amount)
@@ -68,12 +57,22 @@ public class Player : MonoBehaviour
         Debug.Log("Player's Treasure: " + _treasureCount);
     }
 
+    public void Flip()
+    {
+        invin = true;
+    }
+
+    public void FlipEnd()
+    {
+        invin = false;
+    }
+
     public void PowerUp(Color color1, Color color2)
     {
 
         invin = true;
 
-        foreach (GameObject j in tankObjects)
+     /*   foreach (GameObject j in tankObjects)
         {
             if (j.name.Contains("Tread"))
             {
@@ -83,7 +82,7 @@ public class Player : MonoBehaviour
             {
                 j.GetComponent<MeshRenderer>().material.color = color2;
             }
-        }
+        }*/
     }
 
     public void PowerDown(Color color1, Color color2)
@@ -91,7 +90,7 @@ public class Player : MonoBehaviour
 
         invin = false;
 
-        foreach (GameObject j in tankObjects)
+/*        foreach (GameObject j in tankObjects)
         {
             if (j.name.Contains("Tread"))
             {
@@ -101,7 +100,7 @@ public class Player : MonoBehaviour
             {
                 j.GetComponent<MeshRenderer>().material.color = color2;
             }
-        }
+        }*/
     }
 
     public void Kill()

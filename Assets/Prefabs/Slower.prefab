@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e0ada3fa4610c94eb6d74df48105b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageAmount: 1
-  _impactParticles: {fileID: 0}
-  _impactSound: {fileID: 0}
+  _damageAmount: 0
+  _impactParticles: {fileID: 4353615964343941092, guid: f3615dd1cc4f89f4bb0d0c18ce812e45, type: 3}
+  _impactSound: {fileID: 8300000, guid: aae2e032a5e9d034cbb2fb66868dfa9d, type: 3}
+  _slowAmount: 0.05
