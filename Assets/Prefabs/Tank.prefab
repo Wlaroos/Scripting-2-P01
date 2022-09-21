@@ -356,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240001895}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1.233}
+  m_LocalPosition: {x: 0, y: 0, z: 1.375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1208,9 +1208,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _projectile: {fileID: 8346101348758748832, guid: 153eeb32487e1f34ab01634e965c2554, type: 3}
-  _shootVelocity: 1500
-  _shootParticles: {fileID: 0}
-  _shootSound: {fileID: 0}
+  _shootVelocity: 3000
+  _shootParticles: {fileID: 5608496436531538050, guid: b75d1846ee3c20e47bb1e14acf80ff32, type: 3}
+  _shootSounds:
+  - {fileID: 8300000, guid: a0486e206bd846143a5dda276009d09b, type: 3}
+  - {fileID: 8300000, guid: 7925bdb3fe5d8bd4eb14f3b8ffc6347d, type: 3}
+  - {fileID: 8300000, guid: ae152bbee94a2bf4db3c94de35f2bded, type: 3}
   _fireRate: 0.15
   _heatDecrease: 0.1
   _heatIncrease: 0.85

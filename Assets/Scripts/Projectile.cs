@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
 
     [SerializeField] ParticleSystem _projectileParticles;
-    [SerializeField] AudioClip _projectileSound;
+    [SerializeField] AudioClip[] _projectileSounds;
     [SerializeField] int _damage;
 
     private void OnCollisionEnter(Collision collision)
@@ -45,9 +45,9 @@ public class Projectile : MonoBehaviour
             _projectileParticles = Instantiate(_projectileParticles, transform.position, Quaternion.identity);
         }
         //audio -- consider object pooling for performance
-        if (_projectileSound != null)
+        if (_projectileSounds[0] != null)
         {
-            AudioHelper.PlayClip2D(_projectileSound, 1f);
+            AudioHelper.PlayClip2D(_projectileSounds[Random.Range(0, 3)], 0.25f);
         }
     }
 }

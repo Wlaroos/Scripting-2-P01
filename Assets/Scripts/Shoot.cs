@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] float _shootVelocity = 1000f;
 
     [SerializeField] ParticleSystem _shootParticles;
-    [SerializeField] AudioClip _shootSound;
+    [SerializeField] AudioClip[] _shootSounds;
 
     [SerializeField] private float _fireRate = 0.15f;
     private float _nextFire = 0.1f;
@@ -64,12 +64,12 @@ public class Shoot : MonoBehaviour
         //particles
         if (_shootParticles != null)
         {
-            _shootParticles = Instantiate(_shootParticles, transform.position, Quaternion.identity);
+            _shootParticles = Instantiate(_shootParticles, gameObject.transform.GetChild(2).transform.position, transform.rotation);
         }
         //audio -- consider object pooling for performance
-        if (_shootSound != null)
+        if (_shootSounds[0] != null)
         {
-            AudioHelper.PlayClip2D(_shootSound, 1f);
+            AudioHelper.PlayClip2D(_shootSounds[Random.Range(0, 3)], 0.25f);
         }
     }
 

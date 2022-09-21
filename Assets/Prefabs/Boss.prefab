@@ -2725,6 +2725,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1712337646302040994}
+  - component: {fileID: 1043818789}
+  - component: {fileID: 1043818790}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -2777,6 +2779,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1043818789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209764845913626625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a1f23e639f26104fa8451110dad7e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 25
+  _destroySound: {fileID: 8300000, guid: 99b62527ec2df884b91b612eaa0b0c4e, type: 3}
+  _destroyParticles: {fileID: 4353615964343941092, guid: 11c2094983a982b409e645e69dbeb61b, type: 3}
+--- !u!114 &1043818790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8209764845913626625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ff374d817bfdf4a8a99febe4e23d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8209774324731664589
 GameObject:
   m_ObjectHideFlags: 0
