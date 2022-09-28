@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraEffects : MonoBehaviour
+public class ScreenShake : MonoBehaviour
 {
     public Vector3 Amount = new Vector3(1f, 1f, 0);
     public float Duration = 1;
@@ -26,7 +26,7 @@ public class CameraEffects : MonoBehaviour
     public static void ShakeOnce(float duration = 1f, float speed = 10f, Vector3? amount = null, Camera camera = null, bool deltaMovement = true, AnimationCurve curve = null)
     {
         //set data
-        var instance = ((camera != null) ? camera : Camera.main).gameObject.AddComponent<CameraEffects>();
+        var instance = ((camera != null) ? camera : Camera.main).gameObject.AddComponent<ScreenShake>();
         instance.Duration = duration;
         instance.Speed = speed;
         if (amount != null)

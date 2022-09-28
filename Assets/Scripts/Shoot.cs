@@ -81,7 +81,7 @@ public class Shoot : MonoBehaviour
         {
             AudioHelper.PlayClip2D(_shootSounds[UnityEngine.Random.Range(0, 3)], 0.25f);
         }
-        CameraEffects.ShakeOnce(.25f, 5, new Vector3(.5f, .5f, 0));
+        ScreenShake.ShakeOnce(.25f, 5, new Vector3(.5f, .5f, 0));
     }
 
     public void Flip()

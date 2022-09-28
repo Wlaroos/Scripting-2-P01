@@ -124,7 +124,7 @@ public class Player : MonoBehaviour
                 AudioHelper.PlayClip2D(_deathSound, 1f);
             }
 
-            CameraEffects.ShakeOnce(1.5f, 5f, new Vector3(5, 5, 0));
+            ScreenShake.ShakeOnce(1.5f, 5f, new Vector3(5, 5, 0));
         }
     }
 
