@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -12,6 +13,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] ParticleSystem _deathParticles;
     [SerializeField] AudioClip _deathSound;
+
+    public event Action PlayerDamage;
 
     int _treasureCount;
     int _currentHealth;
@@ -42,6 +45,7 @@ public class Player : MonoBehaviour
         if (invin == false)
         {
             _currentHealth -= amount;
+            PlayerDamage?.Invoke();
             Debug.Log("Player's Health: " + _currentHealth);
             if (_currentHealth <= 0)
             {
@@ -119,7 +123,14 @@ public class Player : MonoBehaviour
             {
                 AudioHelper.PlayClip2D(_deathSound, 1f);
             }
+
+            CameraEffects.ShakeOnce(1.5f, 5f, new Vector3(5, 5, 0));
         }
+    }
+
+    public float HealthPercent()
+    {
+        return ((float)_currentHealth / (float)_maxHealth);
     }
 
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Shoot : MonoBehaviour
 {
@@ -16,10 +17,14 @@ public class Shoot : MonoBehaviour
     [SerializeField] private float _heatIncrease = 1f;
 
     private float _heatAmount = 0f;
+    private float _heatMax = 20f;
 
     private bool _cooling = false;
 
     private bool _flipping = false;
+
+    public event Action HeatChange;
+    public event Action<bool> CoolingChange;
 
     private void FixedUpdate()
     {
@@ -28,19 +33,23 @@ public class Shoot : MonoBehaviour
         if(_heatAmount > 0 && _cooling == true)
         {
             _heatAmount -= _heatDecrease;
+            HeatChange?.Invoke();
         }
         else if(_heatAmount > 0 && Input.GetButton("Fire1") == false && _cooling == false)
         {
             _heatAmount -= (2f * _heatDecrease);
+            HeatChange?.Invoke();
         }
         else
         {
             _cooling = false;
+            CoolingChange?.Invoke(false);
         }
 
-        if(_heatAmount > 20)
+        if(_heatAmount > _heatMax)
         {
             _cooling = true;
+            CoolingChange?.Invoke(true);
         }
     }
 
@@ -51,6 +60,7 @@ public class Shoot : MonoBehaviour
             _nextFire = Time.time + _fireRate;
 
             _heatAmount += _heatIncrease;
+            HeatChange?.Invoke();
 
             Feedback();
 
@@ -69,8 +79,9 @@ public class Shoot : MonoBehaviour
         //audio -- consider object pooling for performance
         if (_shootSounds[0] != null)
         {
-            AudioHelper.PlayClip2D(_shootSounds[Random.Range(0, 3)], 0.25f);
+            AudioHelper.PlayClip2D(_shootSounds[UnityEngine.Random.Range(0, 3)], 0.25f);
         }
+        CameraEffects.ShakeOnce(.25f, 5, new Vector3(.5f, .5f, 0));
     }
 
     public void Flip()
@@ -81,5 +92,10 @@ public class Shoot : MonoBehaviour
     public void FlipEnd()
     {
         _flipping = false;
+    }
+
+    public float HeatPercent()
+    {
+        return ((float)_heatAmount / (float)_heatMax);
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Health : MonoBehaviour, IDamageable
 {
@@ -9,6 +10,8 @@ public class Health : MonoBehaviour, IDamageable
     [SerializeField] AudioClip _destroySound;
     [SerializeField] ParticleSystem _destroyParticles;
     private int currentHealth;
+
+    public event Action EntityDamage;
 
     private void Awake()
     {
@@ -26,6 +29,7 @@ public class Health : MonoBehaviour, IDamageable
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        EntityDamage?.Invoke();
     }
 
     private void Kill()
@@ -46,5 +50,10 @@ public class Health : MonoBehaviour, IDamageable
         {
             AudioHelper.PlayClip2D(_destroySound, 1f);
         }
+    }
+
+    public float HealthPercent()
+    {
+        return ((float)currentHealth / (float)maxHealth);
     }
 }
