@@ -41,7 +41,7 @@ public class HUD : MonoBehaviour
     {
         _playerSlider.value = _playerRef.HealthPercent();
         _bloodImg.color = new Color32(255, 0, 0, 150);
-        StartCoroutine(LerpColor(new Color32(255,150,150,0),0.5f));
+        StartCoroutine(LerpColor(new Color32(0,0,0,0),0.5f));
         ScreenShake.ShakeOnce(0.5f);
     }
 
