@@ -25,7 +25,7 @@ public class Laser : MonoBehaviour
 
     public void ImpactFeedback()
     {
-        //particles
+/*      //particles
         if (_laserParticles != null)
         {
             _laserParticles = Instantiate(_laserParticles, transform.position, Quaternion.identity);
@@ -35,5 +35,6 @@ public class Laser : MonoBehaviour
         {
             AudioHelper.PlayClip2D(_laserSound, 1f);
         }
+*/
     }
 }

@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 
     [SerializeField] ParticleSystem _deathParticles;
     [SerializeField] AudioClip _deathSound;
+    [SerializeField] ParticleSystem _hitParticles;
+    [SerializeField] AudioClip _hitSound;
 
     public event Action PlayerDamage;
 
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
         {
             _currentHealth -= amount;
             PlayerDamage?.Invoke();
+            HitFeedback();
             Debug.Log("Player's Health: " + _currentHealth);
             if (_currentHealth <= 0)
             {
@@ -116,7 +119,7 @@ public class Player : MonoBehaviour
             //particles
             if (_deathParticles != null)
             {
-                _deathParticles = Instantiate(_deathParticles, transform.position, Quaternion.identity);
+                _deathParticles = Instantiate(_deathParticles, transform.position + new Vector3(0, 1, 0), Quaternion.Euler(-90, 0, 0));
             }
             //audio -- consider object pooling for performance
             if (_deathSound != null)
@@ -124,13 +127,27 @@ public class Player : MonoBehaviour
                 AudioHelper.PlayClip2D(_deathSound, 1f);
             }
 
-            ScreenShake.ShakeOnce(1.5f, 5f, new Vector3(5, 5, 0));
+            ScreenShake.ShakeOnce(1f, 5f, new Vector3(3, 3, 0));
         }
     }
 
     public float HealthPercent()
     {
         return ((float)_currentHealth / (float)_maxHealth);
+    }
+
+    private void HitFeedback()
+    {
+        //particles
+        if (_hitParticles != null)
+        {
+            _hitParticles = Instantiate(_hitParticles, transform.position + new Vector3(0,1,0), Quaternion.Euler(-90, 0, 0));
+        }
+        //audio -- consider object pooling for performance
+        if (_hitSound != null)
+        {
+            AudioHelper.PlayClip2D(_hitSound, 1f);
+        }
     }
 
 }

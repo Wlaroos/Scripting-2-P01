@@ -9,25 +9,26 @@ public class BossSM : StateMachineMB
     int stateRepeats = 0;
     List<Vector3> _pos = new List<Vector3>();
     List<Quaternion> _rot = new List<Quaternion>();
+    float moveTime = 2.75f;
 
     private void Awake()
     {
-        _pos.Add(new Vector3(-27f, 1.15f, -14f));
-        _pos.Add(new Vector3(-27f, 1.15f, 25f));
-        _pos.Add(new Vector3(27f, 1.15f, 25f));
-        _pos.Add(new Vector3(27f, 1.15f, -14f));
+        _pos.Add(new Vector3(-22f, 1.15f, -14f));
+        _pos.Add(new Vector3(-20f, 1.15f, 20f));
+        _pos.Add(new Vector3(20f, 1.15f, 20f));
+        _pos.Add(new Vector3(22f, 1.15f, -14f));
         _rot.Add(Quaternion.Euler(90, -90, 0));
         _rot.Add(Quaternion.Euler(90, -45, 0));
         _rot.Add(Quaternion.Euler(90, 45, 0));
         _rot.Add(Quaternion.Euler(90, 90, 0));
 
-        StartCoroutine(State1(2.25f));
+        StartCoroutine(State1(moveTime));
     }
 
     private IEnumerator State1(float time)
     {
         Vector3 startingPos = transform.position;
-        Vector3 finalPos = new Vector3(18f, 1.15f, 27f);
+        Vector3 finalPos = new Vector3(14f, 1.15f, 22f);
         Quaternion startingRot = transform.rotation;
         Quaternion finalRot = Quaternion.Euler(90,0,0);
 
@@ -50,13 +51,13 @@ public class BossSM : StateMachineMB
         stateRepeats++;
         if (stateRepeats < 4)
         {
-            StartCoroutine(State1(2.25f));
+            StartCoroutine(State1(moveTime));
         }
         else
         {
             stateRepeats = 0;
             direction = false;
-            StartCoroutine(State2(2.25f));
+            StartCoroutine(State2(moveTime));
         }
 
     }
@@ -89,22 +90,22 @@ public class BossSM : StateMachineMB
 
         if (stateRepeats < 4 && direction == false)
         {
-            StartCoroutine(State2(2.25f));
+            StartCoroutine(State2(moveTime));
         }
         else if (stateRepeats >= 4 && direction == false)
         {
             stateRepeats = 2;
             direction = true;
-            StartCoroutine(State2(2.25f));
+            StartCoroutine(State2(moveTime));
         }
         else if (stateRepeats >= 0 && direction == true)
         {
-            StartCoroutine(State2(2.25f));
+            StartCoroutine(State2(moveTime));
         }
         else if (stateRepeats < 0 && direction == true)
         {
             stateRepeats = -1;
-            StartCoroutine(State1(2.25f));
+            StartCoroutine(State1(moveTime));
         }
 
 
