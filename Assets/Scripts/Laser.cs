@@ -8,7 +8,9 @@ public class Laser : MonoBehaviour
     [SerializeField] ParticleSystem _laserParticles;
     [SerializeField] AudioClip _laserSound;
 
-    private void OnTriggerEnter(Collider other)
+    bool once = false;
+
+    /*private void OnTriggerEnter(Collider other)
     {
         Player player = other.gameObject.GetComponent<Player>();
         if (player != null)
@@ -16,6 +18,16 @@ public class Laser : MonoBehaviour
             PlayerImpact(player);
             ImpactFeedback();
         }
+    }*/
+
+    private void OnTriggerStay(Collider other)
+    {
+            Player player = other.gameObject.GetComponent<Player>();
+            if (player != null)
+            {
+                PlayerImpact(player);
+                ImpactFeedback();
+            }
     }
 
     protected virtual void PlayerImpact(Player player)

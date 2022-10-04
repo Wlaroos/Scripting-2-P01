@@ -21,7 +21,9 @@ public class Player : MonoBehaviour
     int _treasureCount;
     int _currentHealth;
 
-    bool invin = false;
+    float iFrameDuration = 0.5f;
+    int flashes = 4;
+    bool _invincible = false;
 
     TankController _tankController;
 
@@ -44,9 +46,10 @@ public class Player : MonoBehaviour
 
     public void DecreaseHealth(int amount)
     {
-        if (invin == false)
+        if (_invincible == false)
         {
             _currentHealth -= amount;
+            StartCoroutine(IFrames());
             PlayerDamage?.Invoke();
             HitFeedback();
             Debug.Log("Player's Health: " + _currentHealth);
@@ -60,6 +63,7 @@ public class Player : MonoBehaviour
     public void KillZone(int amount)
     {
         _currentHealth -= amount;
+        StartCoroutine(IFrames());
         PlayerDamage?.Invoke();
         HitFeedback();
         Debug.Log("Player's Health: " + _currentHealth);
@@ -78,18 +82,18 @@ public class Player : MonoBehaviour
 
     public void Flip()
     {
-        invin = true;
+        _invincible = true;
     }
 
     public void FlipEnd()
     {
-        invin = false;
+        _invincible = false;
     }
 
     public void PowerUp(Color color1, Color color2)
     {
 
-        invin = true;
+        _invincible = true;
 
      /*   foreach (GameObject j in tankObjects)
         {
@@ -107,7 +111,7 @@ public class Player : MonoBehaviour
     public void PowerDown(Color color1, Color color2)
     {
 
-        invin = false;
+        _invincible = false;
 
 /*        foreach (GameObject j in tankObjects)
         {
@@ -124,8 +128,6 @@ public class Player : MonoBehaviour
 
     public void Kill()
     {
-        if (invin == false)
-        {
             gameObject.SetActive(false);
 
             //particles
@@ -140,7 +142,6 @@ public class Player : MonoBehaviour
             }
 
             ScreenShake.ShakeOnce(1f, 5f, new Vector3(3, 3, 0));
-        }
     }
 
     public float HealthPercent()
@@ -160,6 +161,19 @@ public class Player : MonoBehaviour
         {
             AudioHelper.PlayClip2D(_hitSound, 1f);
         }
+    }
+
+    private IEnumerator IFrames()
+    {
+        _invincible = true;
+        for (int i = 0; i < flashes; i++)
+        {
+            //Change Color to Red
+            yield return new WaitForSeconds(iFrameDuration / flashes * 2);
+            //Reset Color to White
+            yield return new WaitForSeconds(iFrameDuration / flashes * 2);
+        }
+        _invincible = false;
     }
 
 }

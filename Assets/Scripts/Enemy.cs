@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
 
     Rigidbody _rb;
 
+    bool once = false;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();

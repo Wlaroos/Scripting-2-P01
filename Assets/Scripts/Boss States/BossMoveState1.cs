@@ -49,10 +49,8 @@ public class BossMoveState1 : IState
             _delayDuration = 0.2f;
             finalPos.x *= -1;
             stateRepeats++;
-            if (stateRepeats == 1)
-            {
-                _delayDuration = .75f;
-            }
+            if (stateRepeats == 1) _delayDuration = .75f;
+            if (stateRepeats == 2) _warningLine.SetActive(false);
             if (stateRepeats == 4) finalPos.x = 0;
             Debug.Log("REPEAT: " + stateRepeats);
         }
@@ -99,7 +97,6 @@ public class BossMoveState1 : IState
     void StopTimer()
     {
         if(stateRepeats == 1) _laserHolder.SetActive(true);
-        if(stateRepeats == 2) _warningLine.SetActive(false);
 
         _timerActive = false;
     }
