@@ -57,6 +57,18 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void KillZone(int amount)
+    {
+        _currentHealth -= amount;
+        PlayerDamage?.Invoke();
+        HitFeedback();
+        Debug.Log("Player's Health: " + _currentHealth);
+        if (_currentHealth <= 0)
+        {
+            Kill();
+        }
+    }
+
     public void IncreaseTreasure(int amount)
     {
         _treasureCount += amount;

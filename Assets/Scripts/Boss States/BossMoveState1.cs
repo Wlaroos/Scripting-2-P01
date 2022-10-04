@@ -90,8 +90,7 @@ public class BossMoveState1 : IState
     void StartTimer()
     {
         if(stateRepeats == 1) _warningLine.SetActive(true);
-        if (stateRepeats == 2) _warningLine.SetActive(false);
-        if (stateRepeats == 3) _laserHolder.SetActive(false);
+        if(stateRepeats == 3) _laserHolder.SetActive(false);
 
         _timerActive = true;
         _elapsedTime = 0;
@@ -100,6 +99,7 @@ public class BossMoveState1 : IState
     void StopTimer()
     {
         if(stateRepeats == 1) _laserHolder.SetActive(true);
+        if(stateRepeats == 2) _warningLine.SetActive(false);
 
         _timerActive = false;
     }
