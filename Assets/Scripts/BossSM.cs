@@ -29,7 +29,7 @@ public class BossSM : StateMachineMB
     private void Start()
     {
         ChangeState(IdleState);
-        Debug.Log("IDLE");
+        //Debug.Log("IDLE");
 
         Invoke(nameof(Testing), 3f);
     }
@@ -37,7 +37,7 @@ public class BossSM : StateMachineMB
     private void Testing()
     {
         ChangeState(MoveState1);
-        Debug.Log("MOVE 01");
+        //Debug.Log("MOVE 01");
     }
 
 }

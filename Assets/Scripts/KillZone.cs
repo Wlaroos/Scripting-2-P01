@@ -12,7 +12,7 @@ public class KillZone : MonoBehaviour
         Player player = other.gameObject.GetComponent<Player>();
         if (player != null)
         {
-            player.KillZone(1);
+            player.DecreaseHealth(1, true);
             player.transform.position = _respawnPoint.position;
         }
     }

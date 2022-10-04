@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     int _treasureCount;
     int _currentHealth;
 
-    float iFrameDuration = 0.5f;
-    int flashes = 4;
+    float iFrameDuration = 0.4f;
+    int flashes = 2;
     bool _invincible = false;
 
     TankController _tankController;
@@ -41,18 +41,18 @@ public class Player : MonoBehaviour
     {
         _currentHealth += amount;
         _currentHealth = Mathf.Clamp(_currentHealth, 0, _maxHealth);
-        Debug.Log("Player's Health: " + _currentHealth);
+        //Debug.Log("Player's Health: " + _currentHealth);
     }
 
-    public void DecreaseHealth(int amount)
+    public void DecreaseHealth(int amount, bool killzone)
     {
-        if (_invincible == false)
+        if (_invincible == false || killzone)
         {
             _currentHealth -= amount;
-            StartCoroutine(IFrames());
+            StartCoroutine(IFrames(Color.red));
             PlayerDamage?.Invoke();
             HitFeedback();
-            Debug.Log("Player's Health: " + _currentHealth);
+            //Debug.Log("Player's Health: " + _currentHealth);
             if (_currentHealth <= 0)
             {
                 Kill();
@@ -60,34 +60,16 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void KillZone(int amount)
-    {
-        _currentHealth -= amount;
-        StartCoroutine(IFrames());
-        PlayerDamage?.Invoke();
-        HitFeedback();
-        Debug.Log("Player's Health: " + _currentHealth);
-        if (_currentHealth <= 0)
-        {
-            Kill();
-        }
-    }
-
     public void IncreaseTreasure(int amount)
     {
         _treasureCount += amount;
         _tmp.text = "Treasure: " + _treasureCount;
-        Debug.Log("Player's Treasure: " + _treasureCount);
+        //Debug.Log("Player's Treasure: " + _treasureCount);
     }
 
     public void Flip()
     {
-        _invincible = true;
-    }
-
-    public void FlipEnd()
-    {
-        _invincible = false;
+        StartCoroutine(IFrames(Color.cyan));
     }
 
     public void PowerUp(Color color1, Color color2)
@@ -163,17 +145,18 @@ public class Player : MonoBehaviour
         }
     }
 
-    private IEnumerator IFrames()
+    private IEnumerator IFrames(Color32 color)
     {
+        //Debug.Log("Invincibility Begin");
         _invincible = true;
         for (int i = 0; i < flashes; i++)
         {
             //Change Color to Red
-            yield return new WaitForSeconds(iFrameDuration / flashes * 2);
+            yield return new WaitForSeconds(iFrameDuration);
             //Reset Color to White
-            yield return new WaitForSeconds(iFrameDuration / flashes * 2);
         }
         _invincible = false;
+        //Debug.Log("Invincibility End");
     }
 
 }

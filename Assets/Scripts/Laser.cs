@@ -32,7 +32,7 @@ public class Laser : MonoBehaviour
 
     protected virtual void PlayerImpact(Player player)
     {
-        player.DecreaseHealth(_damageAmount);
+        player.DecreaseHealth(_damageAmount, false);
     }
 
     public void ImpactFeedback()
