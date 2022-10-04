@@ -37,7 +37,7 @@ public class Shoot : MonoBehaviour
         }
         else if(_heatAmount > 0 && Input.GetButton("Fire1") == false && _cooling == false)
         {
-            _heatAmount -= (2f * _heatDecrease);
+            _heatAmount -= (2.5f * _heatDecrease);
             HeatChange?.Invoke();
         }
         else
