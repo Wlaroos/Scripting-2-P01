@@ -4,111 +4,40 @@ using UnityEngine;
 
 public class BossSM : StateMachineMB
 {
-  
-    bool direction = false;
-    int stateRepeats = 0;
+
+    public BossIdleState IdleState { get; private set; }
+    public BossMoveState1 MoveState1 { get; private set; }
+    public BossMoveState2 MoveState2 { get; private set; }
+
+    [Header("Required References")]
+    [SerializeField] GameObject _laserHolder = null;
+    [SerializeField] GameObject _warningLine = null;
+
+    //bool direction = false;
+    //int stateRepeats = 0;
     List<Vector3> _pos = new List<Vector3>();
     List<Quaternion> _rot = new List<Quaternion>();
-    float moveTime = 2.75f;
+    float _moveSpeed = 15f;
 
     private void Awake()
     {
-        _pos.Add(new Vector3(-22f, 1.15f, -14f));
-        _pos.Add(new Vector3(-20f, 1.15f, 20f));
-        _pos.Add(new Vector3(20f, 1.15f, 20f));
-        _pos.Add(new Vector3(22f, 1.15f, -14f));
-        _rot.Add(Quaternion.Euler(90, -90, 0));
-        _rot.Add(Quaternion.Euler(90, -45, 0));
-        _rot.Add(Quaternion.Euler(90, 45, 0));
-        _rot.Add(Quaternion.Euler(90, 90, 0));
-
-        StartCoroutine(State1(moveTime));
+        IdleState = new BossIdleState(this, _laserHolder, _warningLine);
+        MoveState1 = new BossMoveState1(this, _laserHolder, _warningLine, _moveSpeed);
+        MoveState2 = new BossMoveState2(this, _laserHolder, _warningLine, _moveSpeed);
     }
 
-    private IEnumerator State1(float time)
+    private void Start()
     {
-        Vector3 startingPos = transform.position;
-        Vector3 finalPos = new Vector3(14f, 1.15f, 22f);
-        Quaternion startingRot = transform.rotation;
-        Quaternion finalRot = Quaternion.Euler(90,0,0);
+        ChangeState(IdleState);
+        Debug.Log("IDLE");
 
-        if (direction == true)
-        {
-            finalPos.x *= -1;
-        }
-
-        float elapsedTime = 0;
-
-        while (elapsedTime < time)
-        {
-            transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
-            transform.rotation = Quaternion.Lerp(startingRot, finalRot, (elapsedTime / time));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        direction = !direction;
-        stateRepeats++;
-        if (stateRepeats < 4)
-        {
-            StartCoroutine(State1(moveTime));
-        }
-        else
-        {
-            stateRepeats = 0;
-            direction = false;
-            StartCoroutine(State2(moveTime));
-        }
-
+        Invoke(nameof(Testing), 3f);
     }
 
-    private IEnumerator State2(float time)
+    private void Testing()
     {
-        Vector3 startingPos = transform.position;
-        Vector3 finalPos = _pos[stateRepeats];
-        Quaternion startingRot = transform.rotation;
-        Quaternion finalRot = _rot[stateRepeats];
-
-        float elapsedTime = 0;
-
-        while (elapsedTime < time)
-        {
-            transform.position = Vector3.Lerp(startingPos, finalPos, (elapsedTime / time));
-            transform.rotation = Quaternion.Lerp(startingRot, finalRot, (elapsedTime / time));
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        if(direction == false)
-        {
-            stateRepeats++;
-        }
-        else
-        {
-            stateRepeats--;
-        }
-
-        if (stateRepeats < 4 && direction == false)
-        {
-            StartCoroutine(State2(moveTime));
-        }
-        else if (stateRepeats >= 4 && direction == false)
-        {
-            stateRepeats = 2;
-            direction = true;
-            StartCoroutine(State2(moveTime));
-        }
-        else if (stateRepeats >= 0 && direction == true)
-        {
-            StartCoroutine(State2(moveTime));
-        }
-        else if (stateRepeats < 0 && direction == true)
-        {
-            stateRepeats = -1;
-            StartCoroutine(State1(moveTime));
-        }
-
-
+        ChangeState(MoveState1);
+        Debug.Log("MOVE 01");
     }
 
 }
