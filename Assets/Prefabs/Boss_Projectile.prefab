@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1811578352908196800}
   - component: {fileID: 218582258594242455}
   - component: {fileID: 5479770809550922654}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4838541754582745241}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.25, z: 0.1}
+  m_LocalScale: {x: 0.2, y: 0.5, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2727506779542421107}
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 372949f84332d8840a5f5da18083bc66, type: 2}
+  - {fileID: 2100000, guid: 4fa06af21e6cea544910899b8bc0b1e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 7616166110365232729}
   - component: {fileID: 5738544431783927505}
   - component: {fileID: 5294203078631613494}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ Transform:
   m_GameObject: {fileID: 5081731541680839246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.25}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2727506779542421107}
@@ -144,7 +144,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 372949f84332d8840a5f5da18083bc66, type: 2}
+  - {fileID: 2100000, guid: 4fa06af21e6cea544910899b8bc0b1e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7082779640438636398}
   - component: {fileID: 5035958309335045346}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,10 +240,10 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.075
+  m_Time: 0.125
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.1
+    widthMultiplier: 0.2
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -261,8 +261,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0, b: 0.4311061, a: 1}
-      key1: {r: 1, g: 0.5518868, b: 0.84061956, a: 0}
+      key0: {r: 0, g: 0.04080534, b: 1, a: 1}
+      key1: {r: 0.5529412, g: 0.9559177, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 376966801909291237}
   - component: {fileID: 7233335697485684584}
   - component: {fileID: 7649172272720924726}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 7954116103870812872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.5, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2727506779542421107}
@@ -358,7 +358,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 372949f84332d8840a5f5da18083bc66, type: 2}
+  - {fileID: 2100000, guid: 4fa06af21e6cea544910899b8bc0b1e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -391,10 +391,10 @@ GameObject:
   - component: {fileID: 2727506779542421107}
   - component: {fileID: 7265781481818527367}
   - component: {fileID: 8804429692041596152}
-  - component: {fileID: 5462069938502806016}
   - component: {fileID: 7466428179279976338}
-  m_Layer: 0
-  m_Name: Tank_Projectile
+  - component: {fileID: 7586062845222128663}
+  m_Layer: 7
+  m_Name: Boss_Projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -428,13 +428,13 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8346101348758748832}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 3
+  m_Drag: 3
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 4
   m_CollisionDetection: 0
 --- !u!65 &8804429692041596152
 BoxCollider:
@@ -447,26 +447,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5462069938502806016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8346101348758748832}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8975cbedec4f72d49850c68c9fe58c37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _projectileParticles: {fileID: 5608496436531538050, guid: efc51b2ea6549a14796162f147786176, type: 3}
-  _projectileSounds:
-  - {fileID: 8300000, guid: e09a941c70c728946acb62cb92af4a4d, type: 3}
-  - {fileID: 8300000, guid: 0aa26ed5adca88744a3950582688d1b5, type: 3}
-  - {fileID: 8300000, guid: b775f56eebe3df5408795b02aa311a34, type: 3}
-  _damage: 1
 --- !u!114 &7466428179279976338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +463,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rotateDirection: {x: 0, y: 0, z: 1}
   _rotateSpeed: 360
+--- !u!114 &7586062845222128663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8346101348758748832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4b536a3695a4a4cb4e1a2953e0e4f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _projectileParticles: {fileID: 5608496436531538050, guid: efc51b2ea6549a14796162f147786176, type: 3}
+  _projectileSounds:
+  - {fileID: 8300000, guid: e09a941c70c728946acb62cb92af4a4d, type: 3}
+  - {fileID: 8300000, guid: 0aa26ed5adca88744a3950582688d1b5, type: 3}
+  - {fileID: 8300000, guid: b775f56eebe3df5408795b02aa311a34, type: 3}
+  _rb: {fileID: 7265781481818527367}
+  _damage: 1
+  _health: 3
 --- !u!1 &8790063986731972233
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +494,7 @@ GameObject:
   - component: {fileID: 5495780487018956544}
   - component: {fileID: 3534470811904239212}
   - component: {fileID: 8637859890448855026}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -508,7 +510,7 @@ Transform:
   m_GameObject: {fileID: 8790063986731972233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2727506779542421107}

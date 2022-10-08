@@ -2,34 +2,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class BossProjectile : MonoBehaviour
 {
 
     [SerializeField] ParticleSystem _projectileParticles;
     [SerializeField] AudioClip[] _projectileSounds;
+    Transform _playerRef;
+    [SerializeField] Rigidbody _rb;
     [SerializeField] int _damage;
+    [SerializeField] int _health;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.transform.GetComponentInParent<Player>() == null)
+        if (collision.transform.GetComponentInParent<Player>() != null)
         {
-            if (collision.transform.GetComponentInParent<IDamageable>() != null)
+            collision.transform.GetComponentInParent<Player>().DecreaseHealth(_damage, false);
+            Feedback();
+            Delt();
+        }
+        else if (collision.transform.GetComponent<Projectile>() != null)
+        {
+            _rb.AddForce(collision.transform.forward * 3000);
+            _health--;
+            if(_health <= 0)
             {
-                collision.transform.GetComponentInParent<IDamageable>().TakeDamage(_damage);
                 Feedback();
-                Destroy(gameObject);
-            }
-            else
-            {
-                Feedback();
-                Destroy(gameObject);
+                Delt();
             }
         }
     }
 
+    private void FixedUpdate()
+    {
+        Vector3 directionVector = (_playerRef.transform.position - transform.position).normalized;
+        _rb.AddForce(directionVector * 150);
+    }
+
     private void Awake()
     {
-        Invoke(nameof(Delt), 2f);
+        _rb = GetComponent<Rigidbody>();
+        _playerRef = GameObject.Find("Tank").transform;
     }
 
     private void Delt()

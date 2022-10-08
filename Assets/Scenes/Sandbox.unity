@@ -1641,6 +1641,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2069393482}
     - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _floorRef
+      value: 
+      objectReference: {fileID: 888041530}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _bossBullet
+      value: 
+      objectReference: {fileID: 8346101348758748832, guid: dec8b592c4edb134eb06308bb35db2be, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
       propertyPath: _laserHolder
       value: 
       objectReference: {fileID: 86213388}
