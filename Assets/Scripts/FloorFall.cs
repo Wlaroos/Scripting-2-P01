@@ -90,7 +90,8 @@ public class FloorFall : MonoBehaviour
         _sr.color = defaultColor;
         _rb.useGravity = true;
         _rb.isKinematic = false;
-        _rb.AddTorque(new Vector3(Random.Range(-50,50), Random.Range(-50, 50), Random.Range(-50, 50)));
+        yield return new WaitForSeconds(.75f);
+        _rb.AddTorque(new Vector3(Random.Range(-500,500), Random.Range(-500, 500), Random.Range(-500, 500)));
     }
 
 }
