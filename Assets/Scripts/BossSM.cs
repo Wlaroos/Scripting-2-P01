@@ -9,6 +9,7 @@ public class BossSM : StateMachineMB
     public BossMoveState1 MoveState1 { get; private set; }
     public BossMoveState2 MoveState2 { get; private set; }
     public BossMoveState3 MoveState3 { get; private set; }
+    public BossMoveState4 MoveState4 { get; private set; }
 
     [Header("Required References")]
     [SerializeField] GameObject _laserHolder = null;
@@ -20,7 +21,7 @@ public class BossSM : StateMachineMB
     //int stateRepeats = 0;
     List<Vector3> _pos = new List<Vector3>();
     List<Quaternion> _rot = new List<Quaternion>();
-    float _moveSpeed = 15f;
+    float _moveSpeed = 20f;
     float _shootVelocity = 750f;
 
     private void Awake()
@@ -29,6 +30,7 @@ public class BossSM : StateMachineMB
         MoveState1 = new BossMoveState1(this, _laserHolder, _warningLine, _moveSpeed);
         MoveState2 = new BossMoveState2(this, _laserHolder, _warningLine, _moveSpeed);
         MoveState3 = new BossMoveState3(this, _bossBullet, _moveSpeed);
+        MoveState4 = new BossMoveState4(this, _laserHolder, _warningLine, _moveSpeed);
     }
 
     private void Start()
@@ -41,7 +43,7 @@ public class BossSM : StateMachineMB
 
     private void Testing()
     {
-        ChangeState(MoveState3);
+        ChangeState(MoveState2);
         //Debug.Log("MOVE 01");
     }
 

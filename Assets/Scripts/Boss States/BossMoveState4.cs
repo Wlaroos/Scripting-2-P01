@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossMoveState2 : IState
+public class BossMoveState4 : IState
 {
 
     BossSM _bossSM;
@@ -16,7 +16,7 @@ public class BossMoveState2 : IState
     float _elapsedTime = 0f;
     bool _timerActive = false;
 
-    public BossMoveState2(BossSM bossSM, GameObject laserHolder, GameObject warningLine, float moveSpeed)
+    public BossMoveState4(BossSM bossSM, GameObject laserHolder, GameObject warningLine, float moveSpeed)
     {
         _bossSM = bossSM;
         _laserHolder = laserHolder;
@@ -27,25 +27,18 @@ public class BossMoveState2 : IState
     bool direction = false;
     int stateRepeats = 0;
 
-    List<Vector3> _pos = new List<Vector3>();
     List<Quaternion> _rot = new List<Quaternion>();
-    Vector3 finalPos;
     Quaternion finalRot;
 
     public void Enter()
     {
         _bossObject = _bossSM.gameObject;
 
-        _pos.Add(new Vector3(-22f, 1.15f, -14f));
-        _pos.Add(new Vector3(-20f, 1.15f, 20f));
-        _pos.Add(new Vector3(20f, 1.15f, 20f));
-        _pos.Add(new Vector3(22f, 1.15f, -14f));
-        _rot.Add(Quaternion.Euler(90, -90, 0));
-        _rot.Add(Quaternion.Euler(90, -45, 0));
-        _rot.Add(Quaternion.Euler(90, 45, 0));
-        _rot.Add(Quaternion.Euler(90, 90, 0));
+        _rot.Add(Quaternion.Euler(90, 50, 0));
+        _rot.Add(Quaternion.Euler(90, -50, 0));
+        _rot.Add(Quaternion.Euler(90, 50, 0));
+        _rot.Add(Quaternion.Euler(90, 0, 0));
 
-        finalPos = _pos[0];
         finalRot = _rot[0];
     }
 
@@ -62,20 +55,16 @@ public class BossMoveState2 : IState
             StopTimer();
             _delayDuration = 0.2f;
 
-            if (stateRepeats < 4)
-            {
-                finalPos = _pos[stateRepeats];
-                finalRot = _rot[stateRepeats];
-            }
+            if (stateRepeats < 4) finalRot = _rot[stateRepeats];
 
             stateRepeats++;
             if (stateRepeats == 1) _delayDuration = .75f;
             if (stateRepeats == 2) _warningLine.SetActive(false);
-            if (stateRepeats == 5) { finalPos = new Vector3(0,1.15f,22); finalRot = Quaternion.Euler(90,0,0); }
+            if (stateRepeats == 5) finalRot = Quaternion.Euler(90,0,0);
             //Debug.Log("REPEAT: " + stateRepeats);
         }
 
-        float distanceFromTarget = Vector3.Distance(finalPos, _bossObject.transform.position);
+        float distanceFromTarget = Quaternion.Angle(finalRot, _bossObject.transform.rotation);
 
         if (distanceFromTarget < 0.1f && _timerActive == false)
         {
@@ -83,7 +72,6 @@ public class BossMoveState2 : IState
         }
         else
         {
-            Move();
             Rotate();
         }
 
@@ -93,11 +81,6 @@ public class BossMoveState2 : IState
             _bossSM.ChangeState(_bossSM.MoveState1);
             //_bossSM.ChangeState(_bossSM.MoveState2);
         }
-    }
-
-    void Move()
-    {
-        _bossObject.transform.position = Vector3.MoveTowards(_bossObject.transform.position, finalPos, _moveSpeed * Time.deltaTime);
     }
 
     void Rotate()

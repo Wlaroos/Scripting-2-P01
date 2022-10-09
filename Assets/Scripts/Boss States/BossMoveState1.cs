@@ -82,7 +82,7 @@ public class BossMoveState1 : IState
 
     void Rotate()
     {
-        _bossObject.transform.rotation = Quaternion.RotateTowards(_bossObject.transform.rotation, finalRot, _moveSpeed * Time.deltaTime);
+        _bossObject.transform.rotation = Quaternion.RotateTowards(_bossObject.transform.rotation, finalRot, _moveSpeed * 2.15f * Time.deltaTime);
     }
 
     void StartTimer()
