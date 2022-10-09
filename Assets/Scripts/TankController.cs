@@ -57,7 +57,6 @@ public class TankController : MonoBehaviour
     public void FlipEnd()
     {
         flipped = false;
-        Debug.Log("FlipEnd Controller");
     }
 
 }

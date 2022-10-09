@@ -76,9 +76,8 @@ public class BossMoveState4 : IState
 
         if (stateRepeats == 5)
         {
-            //Debug.Log("BACK TO IDLE");
-            _bossSM.ChangeState(_bossSM.MoveState3);
-            //_bossSM.ChangeState(_bossSM.MoveState2);
+            _bossSM.RandomState();
+            stateRepeats = 0;
         }
     }
 

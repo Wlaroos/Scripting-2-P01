@@ -12,7 +12,7 @@ public class BossMoveState1 : IState
     float _moveSpeed;
 
     //Delay variables
-    float _delayDuration = 0.2f;
+    float _delayDuration = 0.75f;
     float _elapsedTime = 0f;
     bool _timerActive = false;
 
@@ -46,13 +46,14 @@ public class BossMoveState1 : IState
         if(_elapsedTime > _delayDuration && _timerActive == true)
         {
             StopTimer();
-            _delayDuration = 0.2f;
+
             finalPos.x *= -1;
+
             stateRepeats++;
-            if (stateRepeats == 1) _delayDuration = .75f;
+
             if (stateRepeats == 2) _warningLine.SetActive(false);
             if (stateRepeats == 4) finalPos.x = 0;
-            //Debug.Log("REPEAT: " + stateRepeats);
+
         }
 
         float distanceFromTarget = Vector3.Distance(finalPos, _bossObject.transform.position);
@@ -69,9 +70,9 @@ public class BossMoveState1 : IState
 
         if (stateRepeats == 5)
         {
-            //Debug.Log("BACK TO IDLE");
-            _bossSM.ChangeState(_bossSM.IdleState);
-            //_bossSM.ChangeState(_bossSM.MoveState2);
+            _bossSM.RandomState();
+            finalPos = new Vector3(14f, 1.15f, 22f);
+            stateRepeats = 0;
         }
     }
 

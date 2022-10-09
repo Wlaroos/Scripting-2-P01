@@ -60,7 +60,9 @@ public class BossMoveState3 : IState
 
         if (stateRepeats == 5)
         {
-            _bossSM.ChangeState(_bossSM.IdleState);
+            _bossSM.RandomState();
+            finalPos = new Vector3(14f, 1.15f, 22f);
+            stateRepeats = 0;
         }
     }
 

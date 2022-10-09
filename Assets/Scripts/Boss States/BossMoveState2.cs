@@ -72,7 +72,6 @@ public class BossMoveState2 : IState
             if (stateRepeats == 1) _delayDuration = .75f;
             if (stateRepeats == 2) _warningLine.SetActive(false);
             if (stateRepeats == 5) { finalPos = new Vector3(0,1.15f,22); finalRot = Quaternion.Euler(90,0,0); }
-            //Debug.Log("REPEAT: " + stateRepeats);
         }
 
         float distanceFromTarget = Vector3.Distance(finalPos, _bossObject.transform.position);
@@ -89,9 +88,8 @@ public class BossMoveState2 : IState
 
         if (stateRepeats == 6)
         {
-            //Debug.Log("BACK TO IDLE");
-            _bossSM.ChangeState(_bossSM.MoveState1);
-            //_bossSM.ChangeState(_bossSM.MoveState2);
+            _bossSM.RandomState();
+            stateRepeats = 0;
         }
     }
 

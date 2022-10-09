@@ -36,15 +36,8 @@ public class BossSM : StateMachineMB
     private void Start()
     {
         ChangeState(IdleState);
-        //Debug.Log("IDLE");
 
-        Invoke(nameof(Testing), 3f);
-    }
-
-    private void Testing()
-    {
-        ChangeState(MoveState3);
-        //Debug.Log("MOVE 01");
+        Invoke(nameof(RandomState), 3f);
     }
 
     public void Shoot()
@@ -53,6 +46,18 @@ public class BossSM : StateMachineMB
         GameObject bullet2 = Instantiate(_bossBullet, gameObject.transform.Find("ShootPos2").transform.position, transform.rotation);
         bullet.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * _shootVelocity);
         bullet2.GetComponent<Rigidbody>().AddRelativeForce(transform.forward * _shootVelocity);
+    }
+
+    public void RandomState()
+    {
+        switch (Random.Range(1, 5))
+        {
+            case 1: ChangeState(MoveState1); Debug.Log("State1"); break;
+            case 2: ChangeState(MoveState2); Debug.Log("State2"); break;
+            case 3: ChangeState(MoveState3); Debug.Log("State3"); break;
+            case 4: ChangeState(MoveState4); Debug.Log("State4"); break;
+        }
+
     }
 
 }

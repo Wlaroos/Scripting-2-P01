@@ -34,6 +34,8 @@ public class BossProjectile : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_playerRef == null) Delt();
+
         Vector3 directionVector = (_playerRef.transform.position - transform.position).normalized;
         _rb.AddForce(directionVector * 125);
     }
