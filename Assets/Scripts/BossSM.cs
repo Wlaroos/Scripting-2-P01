@@ -29,7 +29,7 @@ public class BossSM : StateMachineMB
         IdleState = new BossIdleState(this, _laserHolder, _warningLine);
         MoveState1 = new BossMoveState1(this, _laserHolder, _warningLine, _moveSpeed);
         MoveState2 = new BossMoveState2(this, _laserHolder, _warningLine, _moveSpeed);
-        MoveState3 = new BossMoveState3(this, _bossBullet, _moveSpeed);
+        MoveState3 = new BossMoveState3(this, _moveSpeed);
         MoveState4 = new BossMoveState4(this, _laserHolder, _warningLine, _moveSpeed);
     }
 
@@ -43,7 +43,7 @@ public class BossSM : StateMachineMB
 
     private void Testing()
     {
-        ChangeState(MoveState4);
+        ChangeState(MoveState3);
         //Debug.Log("MOVE 01");
     }
 
