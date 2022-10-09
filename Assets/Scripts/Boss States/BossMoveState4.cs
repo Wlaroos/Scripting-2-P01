@@ -53,13 +53,12 @@ public class BossMoveState4 : IState
         if (_elapsedTime > _delayDuration && _timerActive == true)
         {
             StopTimer();
-            _delayDuration = 0.2f;
+            _delayDuration = .75f;
 
             if (stateRepeats < 4) finalRot = _rot[stateRepeats];
 
             stateRepeats++;
-            if (stateRepeats == 1) _delayDuration = .75f;
-            if (stateRepeats == 2) _warningLine.SetActive(false);
+
             if (stateRepeats == 5) finalRot = Quaternion.Euler(90,0,0);
             //Debug.Log("REPEAT: " + stateRepeats);
         }
@@ -75,10 +74,10 @@ public class BossMoveState4 : IState
             Rotate();
         }
 
-        if (stateRepeats == 6)
+        if (stateRepeats == 5)
         {
             //Debug.Log("BACK TO IDLE");
-            _bossSM.ChangeState(_bossSM.MoveState1);
+            _bossSM.ChangeState(_bossSM.MoveState3);
             //_bossSM.ChangeState(_bossSM.MoveState2);
         }
     }
@@ -91,7 +90,9 @@ public class BossMoveState4 : IState
     void StartTimer()
     {
         if (stateRepeats == 1) _warningLine.SetActive(true);
-        if (stateRepeats == 4) _laserHolder.SetActive(false);
+        if (stateRepeats == 2) _warningLine.SetActive(true);
+        if (stateRepeats == 2) _laserHolder.SetActive(false);
+        if (stateRepeats == 3) _laserHolder.SetActive(false);
 
         _timerActive = true;
         _elapsedTime = 0;
@@ -100,6 +101,11 @@ public class BossMoveState4 : IState
     void StopTimer()
     {
         if (stateRepeats == 1) _laserHolder.SetActive(true);
+        if (stateRepeats == 2) _laserHolder.SetActive(true);
+
+        if (stateRepeats == 2) _warningLine.SetActive(false);
+        if (stateRepeats == 3) _warningLine.SetActive(false);
+
 
         _timerActive = false;
     }

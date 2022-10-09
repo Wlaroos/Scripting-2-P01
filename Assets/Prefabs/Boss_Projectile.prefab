@@ -482,7 +482,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b775f56eebe3df5408795b02aa311a34, type: 3}
   _rb: {fileID: 7265781481818527367}
   _damage: 1
-  _health: 3
+  _health: 2
 --- !u!1 &8790063986731972233
 GameObject:
   m_ObjectHideFlags: 0

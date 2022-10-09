@@ -22,7 +22,7 @@ public class BossProjectile : MonoBehaviour
         }
         else if (collision.transform.GetComponent<Projectile>() != null)
         {
-            _rb.AddForce(collision.transform.forward * 3000);
+            _rb.AddForce(collision.transform.forward * 4500);
             _health--;
             if(_health <= 0)
             {
@@ -35,7 +35,7 @@ public class BossProjectile : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 directionVector = (_playerRef.transform.position - transform.position).normalized;
-        _rb.AddForce(directionVector * 150);
+        _rb.AddForce(directionVector * 125);
     }
 
     private void Awake()

@@ -43,7 +43,7 @@ public class BossSM : StateMachineMB
 
     private void Testing()
     {
-        ChangeState(MoveState2);
+        ChangeState(MoveState4);
         //Debug.Log("MOVE 01");
     }
 
