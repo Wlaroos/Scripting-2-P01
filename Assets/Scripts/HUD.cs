@@ -59,11 +59,11 @@ public class HUD : MonoBehaviour
     {
         if (cooling == true)
         {
-            _gunSlider.transform.GetChild(1).GetChild(0).GetComponent<Image>().color = new Color32(255, 60, 0, 255);
+            _gunSlider.transform.GetChild(2).GetChild(0).GetComponent<Image>().color = new Color32(255, 60, 0, 255);
         }
         else
         {
-            _gunSlider.transform.GetChild(1).GetChild(0).GetComponent<Image>().color = new Color32(255, 221, 0, 255);
+            _gunSlider.transform.GetChild(2).GetChild(0).GetComponent<Image>().color = new Color32(255, 221, 0, 255);
         }
     }
 
