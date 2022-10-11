@@ -9,7 +9,10 @@ public class FloorFall : MonoBehaviour
     private SpriteRenderer _sr;
     private Vector3 _pos;
 
-    private Color flashColor = Color.red;
+    private Material glowMaterial;
+    private Color oldColor;
+    private Color oldEmission;
+    private Color flashColor = new Color32(255,0,75,255);
     private float warningTime = 3f;
     private float flashTime = .5f;
 
@@ -18,6 +21,9 @@ public class FloorFall : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _sr = GetComponentInChildren<SpriteRenderer>();
         _pos = transform.position;
+        glowMaterial = transform.GetChild(1).GetComponent<MeshRenderer>().material;
+        oldEmission = glowMaterial.GetColor("_EmissionColor");
+        oldColor = glowMaterial.GetColor("_BaseColor");
     }
 
     private void Start()
@@ -35,6 +41,8 @@ public class FloorFall : MonoBehaviour
     {
         _rb.useGravity = false;
         _rb.isKinematic = true;
+        glowMaterial.SetColor("_EmissionColor", oldEmission);
+        glowMaterial.SetColor("_BaseColor", oldColor);
         transform.position = _pos - new Vector3(0,8,0);
         transform.rotation = Quaternion.identity;
         StartCoroutine("MoveUp");
@@ -56,6 +64,8 @@ public class FloorFall : MonoBehaviour
         float elaspedTime = 0f;
         float flashElaspedTime = 0f;
         bool flip = false;
+        glowMaterial.SetColor("_EmissionColor", new Color(3.2f, .25f, .5f));
+        glowMaterial.SetColor("_BaseColor", Color.red);
 
         while (elaspedTime < warningTime)
         {

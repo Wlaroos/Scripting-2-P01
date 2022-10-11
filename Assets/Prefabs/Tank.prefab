@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 73679887}
   - component: {fileID: 73679889}
   - component: {fileID: 73679888}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 159242744}
   - component: {fileID: 159242746}
   - component: {fileID: 159242745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_L_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 185041645}
   - component: {fileID: 185041646}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -308,7 +308,7 @@ GameObject:
   - component: {fileID: 490607308}
   - component: {fileID: 490607310}
   - component: {fileID: 490607309}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_R_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,7 +391,7 @@ GameObject:
   - component: {fileID: 1014341191}
   - component: {fileID: 1014341193}
   - component: {fileID: 1014341192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tread_Small_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -472,7 +472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1240001896}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ShootPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -505,7 +505,7 @@ GameObject:
   - component: {fileID: 1310779437}
   - component: {fileID: 1310779439}
   - component: {fileID: 1310779438}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_L_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 1346537339}
   - component: {fileID: 1346537341}
   - component: {fileID: 1346537340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tread_Small_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361928530}
   - component: {fileID: 1361928531}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 1403881341}
   - component: {fileID: 1403881343}
   - component: {fileID: 1403881342}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 1426302023}
   - component: {fileID: 1426302025}
   - component: {fileID: 1426302024}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1000,7 +1000,7 @@ GameObject:
   - component: {fileID: 1552846057}
   - component: {fileID: 1552846059}
   - component: {fileID: 1552846058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_L_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1577002116}
   - component: {fileID: 1577002118}
   - component: {fileID: 1577002117}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1166,7 +1166,7 @@ GameObject:
   - component: {fileID: 1923820484}
   - component: {fileID: 1923820486}
   - component: {fileID: 1923820485}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_R_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1249,7 +1249,7 @@ GameObject:
   - component: {fileID: 2128956136}
   - component: {fileID: 2128956138}
   - component: {fileID: 2128956137}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wheel_R_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1332,7 +1332,7 @@ GameObject:
   - component: {fileID: 6200998537689188359}
   - component: {fileID: 7427962372292327651}
   - component: {fileID: 658535731172219281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Barrel (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1415,7 +1415,7 @@ GameObject:
   - component: {fileID: 9220091313537415837}
   - component: {fileID: 8842843537549026186}
   - component: {fileID: 5629222487979967563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1498,7 +1498,7 @@ GameObject:
   - component: {fileID: 2471874325199854503}
   - component: {fileID: 1094608876402182651}
   - component: {fileID: 8148326551960791413}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1581,7 +1581,7 @@ GameObject:
   - component: {fileID: 8772149004925120108}
   - component: {fileID: 8772149004925120110}
   - component: {fileID: 8772149004925120109}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tread_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1664,7 +1664,7 @@ GameObject:
   - component: {fileID: 8772149005470883924}
   - component: {fileID: 1476591533}
   - component: {fileID: 1476591532}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Art
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1733,7 +1733,7 @@ GameObject:
   - component: {fileID: 8772149006348188761}
   - component: {fileID: 1595954252}
   - component: {fileID: 1595954253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1857,7 +1857,7 @@ GameObject:
   - component: {fileID: 8772149006438651863}
   - component: {fileID: 8772149006438651856}
   - component: {fileID: 8772149006438651857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1903,7 +1903,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8772149006438651860}
   serializedVersion: 2
-  m_Mass: 5
+  m_Mass: 15
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -1936,10 +1936,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7deae910b21a2142adfc1132501442e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 3
+  _maxHealth: 5
   _tmp: {fileID: 0}
-  _deathParticles: {fileID: 222833060444073832, guid: ed1088ed5acd5d140a08fec8e96148ff, type: 3}
+  _deathParticles: {fileID: 1371629625325001560, guid: a5d865d357adc3a4cbed7f352c3d684c, type: 3}
   _deathSound: {fileID: 8300000, guid: 7d5dacc3a2f4e864b86f1fcd42512411, type: 3}
+  _hitParticles: {fileID: 1371629625325001560, guid: 0572d341bca30214abdf628b91a30bca, type: 3}
+  _hitSound: {fileID: 8300000, guid: a6719f764d23c8145ba100c43010c486, type: 3}
 --- !u!1 &8772149006678505678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1953,7 @@ GameObject:
   - component: {fileID: 8772149006678505679}
   - component: {fileID: 8772149006678505673}
   - component: {fileID: 8772149006678505672}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tread_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2034,7 +2036,7 @@ GameObject:
   - component: {fileID: 8772149006839384156}
   - component: {fileID: 8772149006839384158}
   - component: {fileID: 8772149006839384157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
