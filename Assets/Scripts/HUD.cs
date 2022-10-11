@@ -13,6 +13,8 @@ public class HUD : MonoBehaviour
     [SerializeField] Health _bossRef;
     [SerializeField] Shoot _shootRef;
     [SerializeField] FloorController _floorRef;
+    [SerializeField] MeshRenderer _rippleRef;
+    Material _rippleInstance;
 
 
     private void Awake()
@@ -20,6 +22,7 @@ public class HUD : MonoBehaviour
         _bossSlider.value = 1;
         _playerSlider.value = 1;
         _gunSlider.value = 0;
+        _rippleInstance = _rippleRef.material;
     }
 
     private void OnEnable()
@@ -52,6 +55,7 @@ public class HUD : MonoBehaviour
 
         if (_bossSlider.value % 0.2f <= 0.00001f && _bossSlider.value > 0)
         {
+            StartCoroutine(LerpRipple(2.5f, 1.05f, 1.1f, 7.5f));
             FallMethod();
         }
     }
@@ -84,6 +88,29 @@ public class HUD : MonoBehaviour
             yield return null;
         }
         _bloodImg.color = endValue;
+    }
+
+    IEnumerator LerpRipple(float densMultValue, float speedMultValue, float heightMultValue, float duration)
+    {
+        float time = 0;
+        Color colorStartValue = _rippleInstance.GetColor("_RippleColor");
+        Color colorEndValue = colorStartValue + new Color32(34, 34, 51,0);
+        float densStartValue = _rippleInstance.GetFloat("_RippleDensity");
+        float densEndValue = densStartValue * densMultValue;
+        float speedStartValue = _rippleInstance.GetFloat("_RippleSlimness");
+        float speedEndValue = speedStartValue * speedMultValue;
+        float heightStartValue = _rippleInstance.GetFloat("_WaveHeight");
+        float heightEndValue = heightStartValue * heightMultValue;
+
+        while (time < duration)
+        {
+            _rippleInstance.SetFloat("_RippleDensity", Mathf.Lerp(densStartValue, densEndValue, time / duration) );
+            _rippleInstance.SetFloat("_RippleSlimness", Mathf.Lerp(speedStartValue, speedEndValue, time / duration) );
+            _rippleInstance.SetFloat("_WaveHeight", Mathf.Lerp(heightStartValue, heightEndValue, time / duration) );
+            _rippleInstance.SetColor("_RippleColor", Color.Lerp(colorStartValue, colorEndValue, time / duration) );
+            time += Time.deltaTime;
+            yield return null;
+        }
     }
 
     void FallMethod()

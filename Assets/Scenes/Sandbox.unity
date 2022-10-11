@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 129366693}
   - component: {fileID: 129366692}
   m_Layer: 0
-  m_Name: Ground(Outer) (1)
+  m_Name: Ground(Ripple)
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -675,8 +675,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 129366691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.5, z: 2.7}
-  m_LocalScale: {x: 13, y: 3, z: 9}
+  m_LocalPosition: {x: -67.3, y: -7.5, z: -42.4}
+  m_LocalScale: {x: 26, y: 3, z: 18}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -4746,6 +4746,7 @@ MonoBehaviour:
   _bossRef: {fileID: 2069393481}
   _shootRef: {fileID: 494170654}
   _floorRef: {fileID: 888041532}
+  _rippleRef: {fileID: 129366693}
 --- !u!1 &1699042007
 GameObject:
   m_ObjectHideFlags: 0
