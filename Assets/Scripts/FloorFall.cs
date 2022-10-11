@@ -14,6 +14,7 @@ public class FloorFall : MonoBehaviour
     private Color oldEmission;
     private Color flashColor = new Color32(255,0,75,255);
     private float warningTime = 3f;
+    private float tileResetTime = 7.5f;
     private float flashTime = .5f;
 
     private void Awake()
@@ -34,7 +35,7 @@ public class FloorFall : MonoBehaviour
     public void StartFall()
     {
         StartCoroutine("FlashInput", _sr);
-        Invoke(nameof(Reset), warningTime * 3);
+        Invoke(nameof(Reset), tileResetTime);
     }
 
     public void Reset()

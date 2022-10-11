@@ -18,7 +18,7 @@ public class FloorController : MonoBehaviour
         }
     }
 
-    IEnumerator FallOrder(int respawnNum, int num1, int num2, int num3)
+    public IEnumerator FallOrder(int respawnNum, int num1, int num2, int num3)
     {
         allowed = false;
 

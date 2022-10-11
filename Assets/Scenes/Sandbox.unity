@@ -1803,6 +1803,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime1
+      value: 65535
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime2
+      value: 65150
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 0.97825545
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 0.00015756903
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 0.17492767
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.r
+      value: 0.48567677
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.key2.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 794278903, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: m_Parameters.colorGradient.m_NumColorKeys
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
       propertyPath: _floorRef
       value: 
@@ -4693,6 +4745,7 @@ MonoBehaviour:
   _playerRef: {fileID: 1444965961}
   _bossRef: {fileID: 2069393481}
   _shootRef: {fileID: 494170654}
+  _floorRef: {fileID: 888041532}
 --- !u!1 &1699042007
 GameObject:
   m_ObjectHideFlags: 0

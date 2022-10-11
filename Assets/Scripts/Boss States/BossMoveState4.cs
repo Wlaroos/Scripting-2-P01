@@ -102,8 +102,8 @@ public class BossMoveState4 : IState
         if (stateRepeats == 1) _laserHolder.SetActive(true);
         if (stateRepeats == 2) _laserHolder.SetActive(true);
 
+        if (stateRepeats == 1) _warningLine.SetActive(false);
         if (stateRepeats == 2) _warningLine.SetActive(false);
-        if (stateRepeats == 3) _warningLine.SetActive(false);
 
 
         _timerActive = false;
