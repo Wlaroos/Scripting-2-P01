@@ -412,6 +412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &109385501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1240,6 +1244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &219472209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,6 +1498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &340246228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,10 +1867,62 @@ PrefabInstance:
       propertyPath: m_Parameters.colorGradient.m_NumColorKeys
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1043818789, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: maxHealth
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
       propertyPath: _floorRef
       value: 
       objectReference: {fileID: 888041530}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _laserChargeSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _warningBeamSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _bulletChargeSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _laserChargeSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0ef2e165375cf0a40b64bc8dd19f7489, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _laserChargeSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 952a181acb1bce74ca873b1f44b8f6c0, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _laserChargeSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: f12798f8c65b9654dba37254474a4a59, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _warningBeamSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a1a069fcc9be66e489262988bbfc1b15, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _warningBeamSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 493cdbaa5efaa2b44bb6392acf2d688a, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _warningBeamSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: b42945f91f21d5e43a570ff6ea0179cf, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _bulletChargeSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 14fa93ed11c22ab499131950544a33df, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _bulletChargeSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: d3bf2781e9f19a5489a81ea5534991b7, type: 3}
+    - target: {fileID: 1043818790, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
+      propertyPath: _bulletChargeSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 13649666b0fb96c42a6ec1fe28554f79, type: 3}
     - target: {fileID: 1712337646302040994, guid: bfb571e11c36eaf4a9a20578c8d1dbbd, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2501,6 +2565,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &667722833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,6 +2955,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &837064167
 GameObject:
   m_ObjectHideFlags: 0
@@ -3242,6 +3314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &1146479359
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3447,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &1160068074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3844,6 +3924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1330643081}
   - component: {fileID: 1330643080}
+  - component: {fileID: 1330643082}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -3878,6 +3959,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1330643082
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1330643079}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a7476ae96775a65439e3e7a51461b0d1, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1349238429
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,6 +5136,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1 &1741903952
 GameObject:
   m_ObjectHideFlags: 0
@@ -5689,6 +5870,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac4ec804b82b6154fa1c7ef86d299678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fallSFX:
+  - {fileID: 8300000, guid: 38dcd33f60736fe4b9804c24eca20cde, type: 3}
+  - {fileID: 8300000, guid: 0018b7e7b30ae7748ba88f328fc70a4f, type: 3}
+  - {fileID: 8300000, guid: 176ca6b625a9a334eaafa8430e306b35, type: 3}
 --- !u!1001 &2112172511335311566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5757,6 +5942,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1595954253, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _overheatSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 45ba6b14e73ffe04f9ec44bddc9f3cc6, type: 3}
+    - target: {fileID: 1595954253, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _shootSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595954253, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _shootSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: a0486e206bd846143a5dda276009d09b, type: 3}
+    - target: {fileID: 1595954253, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _shootSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 7925bdb3fe5d8bd4eb14f3b8ffc6347d, type: 3}
+    - target: {fileID: 1595954253, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _shootSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: ae152bbee94a2bf4db3c94de35f2bded, type: 3}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: dodgeRollSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _dodgeRollSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: dodgeRollSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2be58cd8880360f46a00264c2207135e, type: 3}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: dodgeRollSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6b9e592cb4ae68449cde221ea5b3817, type: 3}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: dodgeRollSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e4e0429eed93c74f835163d4e03fb20, type: 3}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _dodgeRollSFX.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 2be58cd8880360f46a00264c2207135e, type: 3}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _dodgeRollSFX.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: f6b9e592cb4ae68449cde221ea5b3817, type: 3}
+    - target: {fileID: 8772149006438651856, guid: 5c2beeb22c808db469538894531106e4, type: 3}
+      propertyPath: _dodgeRollSFX.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6e4e0429eed93c74f835163d4e03fb20, type: 3}
     - target: {fileID: 8772149006438651857, guid: 5c2beeb22c808db469538894531106e4, type: 3}
       propertyPath: _tmp
       value: 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class TankController : MonoBehaviour
 {
     [SerializeField] float _moveSpeed = 10f;
+    [SerializeField] AudioClip[] _dodgeRollSFX;
     public float MoveSpeed
     {
         get => _moveSpeed;
@@ -48,6 +49,7 @@ public class TankController : MonoBehaviour
     public void FlipTank()
     {
         _rb.AddForce(75f * transform.forward, ForceMode.Impulse);
+        AudioHelper.PlayClip2D(_dodgeRollSFX[Random.Range(0, 3)], 1f);
         flipped = true;
         transform.GetComponent<Player>().Flip();
         transform.GetChild(0).GetChild(1).GetComponent<Shoot>().Flip();

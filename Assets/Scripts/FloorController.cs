@@ -16,6 +16,8 @@ public class FloorController : MonoBehaviour
         {
             if(allowed) StartCoroutine(FallOrder(2, 4, 5, 6));
         }
+
+        if (allowed) MoveRespawn(5);
     }
 
     public IEnumerator FallOrder(int respawnNum, int num1, int num2, int num3)
@@ -25,16 +27,12 @@ public class FloorController : MonoBehaviour
         MoveRespawn(respawnNum);
 
         Fall(num1);
-
         yield return new WaitForSeconds(.25f);
         Fall(num2);
-
         yield return new WaitForSeconds(.25f);
         Fall(num3);
-
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(7.5f);
         allowed = true;
-        MoveRespawn(5);
     }
 
     public void Fall(int index)

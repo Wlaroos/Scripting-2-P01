@@ -88,8 +88,8 @@ public class BossMoveState4 : IState
 
     void StartTimer()
     {
-        if (stateRepeats == 1) _warningLine.SetActive(true);
-        if (stateRepeats == 2) _warningLine.SetActive(true);
+        if (stateRepeats == 1) { _warningLine.SetActive(true); _bossSM.LaserChargeSFX(); }
+        if (stateRepeats == 2) { _warningLine.SetActive(true); _bossSM.LaserChargeSFX(); }
         if (stateRepeats == 2) _laserHolder.SetActive(false);
         if (stateRepeats == 3) _laserHolder.SetActive(false);
 

@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4b536a3695a4a4cb4e1a2953e0e4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectileParticles: {fileID: 5608496436531538050, guid: efc51b2ea6549a14796162f147786176, type: 3}
+  _projectileParticles: {fileID: 5608496436531538050, guid: 5142b1e508fcfea4a8d840f330583b01, type: 3}
   _projectileSounds:
   - {fileID: 8300000, guid: e09a941c70c728946acb62cb92af4a4d, type: 3}
   - {fileID: 8300000, guid: 0aa26ed5adca88744a3950582688d1b5, type: 3}

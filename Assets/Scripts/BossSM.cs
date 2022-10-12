@@ -17,6 +17,10 @@ public class BossSM : StateMachineMB
     [SerializeField] GameObject _bossBullet = null;
     [SerializeField] GameObject _floorRef = null;
 
+    [SerializeField] AudioClip[] _laserChargeSFX;
+    [SerializeField] AudioClip[] _bulletChargeSFX;
+    [SerializeField] AudioClip[] _warningBeamSFX;
+
     //bool direction = false;
     //int stateRepeats = 0;
     List<Vector3> _pos = new List<Vector3>();
@@ -58,6 +62,21 @@ public class BossSM : StateMachineMB
             case 4: ChangeState(MoveState4); Debug.Log("State4"); break;
         }
 
+    }
+
+    public void LaserChargeSFX()
+    {
+        AudioHelper.PlayClip2D(_laserChargeSFX[Random.Range(0, 3)], 1f);
+    }
+
+    public void BulletChargeSFX()
+    {
+        AudioHelper.PlayClip2D(_bulletChargeSFX[Random.Range(0, 3)], 1f);
+    }
+
+    public void WarningBeamSFX()
+    {
+        AudioHelper.PlayClip2D(_warningBeamSFX[Random.Range(0, 3)], 1f);
     }
 
 }

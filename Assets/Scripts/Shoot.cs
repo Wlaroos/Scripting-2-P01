@@ -9,7 +9,8 @@ public class Shoot : MonoBehaviour
     [SerializeField] float _shootVelocity = 1000f;
 
     [SerializeField] ParticleSystem _shootParticles;
-    [SerializeField] AudioClip[] _shootSounds;
+    [SerializeField] AudioClip[] _shootSFX;
+    [SerializeField] AudioClip _overheatSFX;
 
     [SerializeField] private float _fireRate = 0.15f;
     private float _nextFire = 0.1f;
@@ -48,6 +49,7 @@ public class Shoot : MonoBehaviour
 
         if(_heatAmount > _heatMax)
         {
+            AudioHelper.PlayClip2D(_overheatSFX, 0.33f);
             _cooling = true;
             CoolingChange?.Invoke(true);
         }
@@ -77,9 +79,9 @@ public class Shoot : MonoBehaviour
             _shootParticles = Instantiate(_shootParticles, gameObject.transform.GetChild(2).transform.position, transform.rotation);
         }
         //audio -- consider object pooling for performance
-        if (_shootSounds[0] != null)
+        if (_shootSFX[0] != null)
         {
-            AudioHelper.PlayClip2D(_shootSounds[UnityEngine.Random.Range(0, 3)], 0.25f);
+            AudioHelper.PlayClip2D(_shootSFX[UnityEngine.Random.Range(0, 3)], 0.25f);
         }
         //ScreenShake.ShakeOnce(.25f, 5, new Vector3(.5f, .5f, 0));
     }

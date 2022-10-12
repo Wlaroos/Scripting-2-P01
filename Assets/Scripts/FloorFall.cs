@@ -5,6 +5,8 @@ using UnityEngine;
 public class FloorFall : MonoBehaviour
 {
 
+    [SerializeField] AudioClip[] _fallSFX;
+
     private Rigidbody _rb;
     private SpriteRenderer _sr;
     private Vector3 _pos;
@@ -101,6 +103,7 @@ public class FloorFall : MonoBehaviour
         _sr.color = defaultColor;
         _rb.useGravity = true;
         _rb.isKinematic = false;
+        AudioHelper.PlayClip2D(_fallSFX[Random.Range(0, 3)], .5f);
         yield return new WaitForSeconds(.75f);
         _rb.AddTorque(new Vector3(Random.Range(-500,500), Random.Range(-500, 500), Random.Range(-500, 500)));
     }

@@ -73,10 +73,10 @@ public class BossMoveState3 : IState
 
     void StartTimer()
     {
-        if (stateRepeats == 0) SpinStart();
-        if (stateRepeats == 1) SpinStart();
-        if (stateRepeats == 2) SpinStart();
-        if (stateRepeats == 3) SpinStart();
+        if (stateRepeats == 0) { SpinStart(); _bossSM.BulletChargeSFX(); }
+        if (stateRepeats == 1) { SpinStart(); _bossSM.BulletChargeSFX(); }
+        if (stateRepeats == 2) { SpinStart(); _bossSM.BulletChargeSFX(); }
+        if (stateRepeats == 3) { SpinStart(); _bossSM.BulletChargeSFX(); }
 
         _timerActive = true;
         _elapsedTime = 0;
