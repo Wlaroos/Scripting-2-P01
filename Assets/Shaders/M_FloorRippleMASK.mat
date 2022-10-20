@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_FloorRipple
-  m_Shader: {fileID: -6465566751694194690, guid: 3df866dd8bb9d7d4aaf2a252558f63f6, type: 3}
+  m_Name: M_FloorRippleMASK
+  m_Shader: {fileID: -6465566751694194690, guid: 79ee3cd4a3d93214d84a649562e3f8c9, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -133,4 +133,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _RippleColor: {r: 0.6666667, g: 0, b: 1, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
+    - _SphereParams: {r: -5.7, g: 7.67, b: 5.49, a: 10}
+    - _Tank_loc: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
